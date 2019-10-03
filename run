@@ -1,0 +1,29 @@
+#!/bin/bash
+VAR=$1
+if [[ "$VAR" == str* ]]; then
+   ./bazel-bin/main/structured
+elif [[ "$VAR" == con* ]]; then
+   ./bazel-bin/main/containers
+elif [[ "$VAR" == "rpn" ]]; then
+   ./bazel-bin/main/rpn
+elif [[ "$VAR" == freq* ]]; then
+   ./bazel-bin/main/freq-counter < lorem_ipsum.txt
+elif [[ "$VAR" == mult* ]]; then
+   echo -e "\033[1;31mMultimap doesn't work\033[0m\n";
+   ./bazel-bin/main/multimap
+elif [[ "$VAR" == prio* ]]; then
+   ./bazel-bin/main/priority
+elif [[ "$VAR" == iter* ]]; then
+   ./bazel-bin/main/iterators
+elif [[ "$VAR" == "fib" ]]; then
+   ./bazel-bin/main/fib
+elif [[ "$VAR" == sen* ]]; then
+   ./bazel-bin/main/sentinels
+elif [[ "$VAR" == checkit* ]]; then
+   ./bazel-bin/main/checkit
+elif [[ "$VAR" == zip* ]]; then
+   ./bazel-bin/main/zip-iter
+else
+   ./bazel-bin/main/std-function
+fi
+

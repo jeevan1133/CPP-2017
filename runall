@@ -1,0 +1,20 @@
+#!/bin/bash
+./build
+source "./readline.sh"
+echo -e "\n\nRunning structured***************"; ./bazel-bin/main/structured
+ask_user_input;
+echo -e "\n\nRunning containers***************"; ./bazel-bin/main/containers < lorem_ipsum.txt
+ask_user_input;
+echo -e "\n\nRunning rpn calculator *********************";
+ask_user_input;
+echo "1 2 3 + * 3 +" > ./bazel-bin/main/rpn
+ask_user_input;
+echo -e "\n\nRunning Freq Counter********************";
+      ./bazel-bin/main/freq-counter < lorem_ipsum.txt
+ask_user_input;
+echo -e "\n\n\033[1;31mMultimap doesn't work\033[0m\n"; # ./bazel-bin/main/multimap
+echo -e "\n\nRunning priority queue***************";./bazel-bin/main/priority
+ask_user_input
+echo -e "\n\nRunning custom iterators************"; ./bazel-bin/main/iterators
+ask_user_input
+echo -e "\n\nRunning Implementing algorithms in terms of iterators***********"; ./bazel-bin/main/fib
