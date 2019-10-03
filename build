@@ -2,6 +2,7 @@
 VAR=$1
 if [ "$VAR" != "clean" ]; then
    $(bazel build //main:*)
+   printf "\n\n\033[1;31mLook at run to run specific program.\033[0m\n"
 else
    $(bazel clean)
 fi
